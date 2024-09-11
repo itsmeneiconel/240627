@@ -26,15 +26,16 @@ sed -i '/watch/d' ./Procfile
 
 bench get-app lms
 
-# bench new-site lms.localhost \
-#     --mariadb-root-password 123 \
-#     --admin-password admin \
-#     --force \
-#     --no-mariadb-socket
+bench new-site lms.localhost \
+    --mariadb-root-password 123 \
+    --admin-password admin \
+    --force \
+    --no-mariadb-socket
 
-bench new-site lms.localhost --db-name blms --db-password blms.y.2024 --admin-password admin --db-type mariadb --db-root-password 123
+# bench new-site lms.localhost --db-name blms --db-password blms.y.2024 --admin-password admin --db-type mariadb --db-root-password 123
 
 bench --site lms.localhost install-app lms
+# add here override application
 bench --site lms.localhost set-config developer_mode 1
 bench --site lms.localhost clear-cache
 bench --site lms.localhost set-config mute_emails 1

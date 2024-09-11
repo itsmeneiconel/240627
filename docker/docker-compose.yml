@@ -24,11 +24,13 @@ services:
     working_dir: /home/frappe
     volumes:
       - .:/workspace
-      # - frappe-data:/home/frappe/
+      - frappe-data-1:/home/frappe/
     ports:
       - 8000:8000
       - 9000:9000
 
 volumes:
   mariadb-data:
-  # frappe-data:    
+  # frappe-data:
+  frappe-data-1:
+
